@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Benjamin KALOMBO MUKENA
 
-## Getting Started
+Portfolio professionnel moderne et minimaliste pour Ingénieur Logiciel Backend & Core Banking.
 
-First, run the development server:
+## 🚀 Technologies
+
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS v4
+- **UI Components**: Shadcn UI
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Fonts**: Geist Sans & Geist Mono
+- **Language**: TypeScript
+
+## ✨ Fonctionnalités
+
+- ✅ Design minimaliste et moderne (tech-heavy)
+- ✅ Mode sombre par défaut avec accents bleu/émeraude
+- ✅ Animations fluides avec Framer Motion
+- ✅ 100% Responsive (Mobile, Tablet, Desktop)
+- ✅ Composants réutilisables et modulaires
+- ✅ SEO optimisé
+- ✅ Accessibilité (ARIA labels, navigation au clavier)
+- ✅ Performance optimale
+
+## 📦 Installation
 
 ```bash
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build pour la production
+npm run build
+
+# Démarrer en production
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎨 Structure du Projet
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+portfolio/
+├── app/
+│   ├── layout.tsx          # Layout principal avec SEO
+│   ├── page.tsx            # Page d'accueil
+│   └── globals.css         # Styles globaux et thème
+├── components/
+│   ├── sections/
+│   │   ├── hero.tsx        # Section Hero
+│   │   ├── tech-stack.tsx  # Compétences techniques
+│   │   ├── experience.tsx  # Expérience professionnelle
+│   │   ├── projects.tsx    # Projets majeurs
+│   │   ├── distinction.tsx # Prix et distinctions
+│   │   ├── education.tsx   # Formation
+│   │   └── contact.tsx     # Contact
+│   ├── ui/                 # Composants UI Shadcn
+│   └── footer.tsx          # Footer
+└── lib/
+    └── utils.ts            # Utilitaires
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 Sections du Portfolio
 
-## Learn More
+1. **Hero** - Introduction avec nom, titre et CTAs
+2. **Tech Stack** - Compétences techniques organisées par catégorie
+3. **Expérience** - FENX et TINDA
+4. **Projets** - BANKY (CBS) et KYC-MANAGER
+5. **Distinction** - 1er Prix Hackathon "Code & Win" ADIS 2025
+6. **Éducation** - UNIKIN
+7. **Contact** - Formulaire et informations de contact
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Personnalisation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Couleurs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Les couleurs sont définies dans `app/globals.css` avec le système de design Tailwind CSS v4 et OKLCH:
 
-## Deploy on Vercel
+- **Primary**: Bleu profond (accent principal)
+- **Accent**: Émeraude (accent secondaire)
+- **Background**: Noir/gris très foncé
+- **Foreground**: Blanc cassé
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contenu
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pour modifier le contenu, éditez les fichiers dans `components/sections/`:
+
+- Informations personnelles: `hero.tsx`, `contact.tsx`
+- Compétences: `tech-stack.tsx`
+- Expériences: `experience.tsx`
+- Projets: `projects.tsx`
+- Distinctions: `distinction.tsx`
+
+## 📱 Responsive Design
+
+Le portfolio est entièrement responsive avec des breakpoints:
+
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## 🚀 Déploiement
+
+### Vercel (Recommandé)
+
+```bash
+# Installer Vercel CLI
+npm i -g vercel
+
+# Déployer
+vercel
+```
+
+### Autres plateformes
+
+Le projet peut être déployé sur n'importe quelle plateforme supportant Next.js:
+- Netlify
+- Railway
+- Render
+- AWS Amplify
+
+## 📄 License
+
+© 2025 Benjamin KALOMBO MUKENA. Tous droits réservés.
+
+## 📧 Contact
+
+- **Email**: bmukena85@gmail.com
+- **Téléphone**: +243 828 120 996
+- **GitHub**: [github.com/benjaminkalombo](https://github.com/benjaminkalombo)
+- **LinkedIn**: [linkedin.com/in/benjaminkalombo](https://linkedin.com/in/benjaminkalombo)
