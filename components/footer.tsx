@@ -1,93 +1,189 @@
 "use client";
 
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Heart,
+  Twitter,
+  ExternalLink,
+  ArrowUp,
+  Cpu,
+  Code2,
+  Phone,
+  Sparkles
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="relative border-t border-border/50 bg-card/30 backdrop-blur-sm">
-      <div className="container px-4 md:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold">Benjamin KALOMBO MUKENA</h3>
-            <p className="text-sm text-muted-foreground">
-              Ingénieur Logiciel spécialisé en Backend & Core Banking
+    <footer className="relative border-t border-border/50 bg-card/60 backdrop-blur-xl overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-[120px] -z-10" />
+
+      <div className="container px-4 md:px-6 py-16 md:py-24 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 items-start mb-16">
+          {/* Column 1: Brand & Bio */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6 text-center md:text-left"
+          >
+            <div className="space-y-3">
+              <h3 className="text-2xl md:text-3xl font-black tracking-tighter bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                Benjamin KALOMBO MUKENA
+              </h3>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold text-primary uppercase tracking-widest">
+                <Cpu className="h-3 w-3" />
+                Ingénieur Logiciel Senior
+              </div>
+            </div>
+            <p className="text-muted-foreground leading-relaxed max-w-sm mx-auto md:mx-0 font-medium">
+              Spécialisé en architectures backend et Core Banking Systems. Expert en création de solutions robustes, scalables et sécurisées pour les systèmes bancaires critiques.
             </p>
-          </div>
+            <div className="flex justify-center md:justify-start gap-4">
+              {[
+                { icon: Linkedin, href: "https://linkedin.com/in/benjaminkalombo", label: "LinkedIn", color: "hover:text-[#0077b5]" },
+                { icon: Github, href: "https://github.com/benjaminkalombo", label: "GitHub", color: "hover:text-foreground" },
+                { icon: Twitter, href: "https://twitter.com/fenx", label: "Twitter", color: "hover:text-[#1da1f2]" },
+                { icon: Mail, href: "mailto:bmukena85@gmail.com", label: "Email", color: "hover:text-primary" }
+              ].map((social) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  whileHover={{ y: -3 }}
+                  className={`text-muted-foreground transition-all duration-300 ${social.color}`}
+                >
+                  <social.icon className="h-6 w-6" />
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
 
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Navigation</h4>
-            <nav className="flex flex-col space-y-2 text-sm text-muted-foreground">
-              <a href="#tech-stack" className="hover:text-primary transition-colors">
-                Stack Technique
-              </a>
-              <a href="#experience" className="hover:text-primary transition-colors">
-                Expérience
-              </a>
-              <a href="#projects" className="hover:text-primary transition-colors">
-                Projets
-              </a>
-              <a href="#distinction" className="hover:text-primary transition-colors">
-                Distinction
-              </a>
-              <a href="#contact" className="hover:text-primary transition-colors">
-                Contact
-              </a>
+          {/* Column 2: Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="space-y-6 text-center md:text-left"
+          >
+            <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">Navigation</h4>
+            <nav className="grid grid-cols-2 lg:grid-cols-1 gap-y-4 gap-x-8 max-w-[280px] mx-auto md:mx-0">
+              {[
+                { name: "Stack Technique", href: "#tech-stack" },
+                { name: "Expérience", href: "#experience" },
+                { name: "Projets Majeurs", href: "#projects" },
+                { name: "Distinctions", href: "#distinction" },
+                { name: "Formation", href: "#education" },
+                { name: "Contact", href: "#contact" }
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm font-bold text-muted-foreground hover:text-primary transition-all flex items-center gap-2 group justify-center md:justify-start hover:translate-x-1"
+                >
+                  <span className="w-1 h-1 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {item.name}
+                </a>
+              ))}
             </nav>
-          </div>
+          </motion.div>
 
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Contact</h4>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <a href="mailto:bmukena85@gmail.com" className="block hover:text-primary transition-colors">
-                bmukena85@gmail.com
+          {/* Column 3: Collaborons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="space-y-6 text-center md:text-left"
+          >
+            <div className="space-y-2">
+              <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">Collaborons</h4>
+              <p className="text-sm text-muted-foreground font-medium italic">Vous avez un projet en tête ? Parlons-en !</p>
+            </div>
+
+            <div className="space-y-4">
+              <a
+                href="mailto:bmukena85@gmail.com"
+                className="group flex flex-col sm:flex-row items-center gap-4 p-4 rounded-xl bg-secondary/30 border border-border/50 hover:border-primary/40 hover:bg-secondary/50 transition-all justify-center md:justify-start"
+              >
+                <div className="p-2.5 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+                  <Mail className="h-5 w-5" />
+                </div>
+                <div className="text-left">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Email professionnel</p>
+                  <p className="text-sm font-bold truncate">bmukena85@gmail.com</p>
+                </div>
               </a>
-              <a href="tel:+243828120996" className="block hover:text-primary transition-colors">
-                +243 828 120 996
+
+              <a
+                href="tel:+243828120996"
+                className="group flex flex-col sm:flex-row items-center gap-4 p-4 rounded-xl bg-secondary/30 border border-border/50 hover:border-accent/40 hover:bg-secondary/50 transition-all justify-center md:justify-start"
+              >
+                <div className="p-2.5 rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all">
+                  <Phone className="h-5 w-5" />
+                </div>
+                <div className="text-left">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Appel direct / WhatsApp</p>
+                  <p className="text-sm font-bold">+243 828 120 996</p>
+                </div>
               </a>
             </div>
-            <div className="flex gap-2 pt-2">
-              <Button
-                size="icon"
-                variant="ghost"
-                className="hover:bg-primary/10 hover:text-primary"
-                asChild
-              >
-                <a href="https://github.com/benjaminkalombo" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <Github className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="hover:bg-primary/10 hover:text-primary"
-                asChild
-              >
-                <a href="https://linkedin.com/in/benjaminkalombo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <Linkedin className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button
-                size="icon"
-                variant="ghost"
-                className="hover:bg-primary/10 hover:text-primary"
-                asChild
-              >
-                <a href="mailto:bmukena85@gmail.com" aria-label="Email">
-                  <Mail className="h-4 w-4" />
-                </a>
-              </Button>
-            </div>
-          </div>
+
+            <Button
+              variant="outline"
+              className="w-full md:w-auto mt-4 rounded-xl border-primary/20 hover:border-primary font-bold group"
+              onClick={scrollToTop}
+            >
+              Retour en haut
+              <ArrowUp className="ml-2 h-4 w-4 group-hover:-translate-y-1 transition-transform" />
+            </Button>
+          </motion.div>
         </div>
 
-        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p>
-            © {new Date().getFullYear()} Benjamin KALOMBO MUKENA. Tous droits réservés.
-          </p>
-          <p className="flex items-center gap-1">
-            Conçu avec <Heart className="h-4 w-4 text-primary fill-primary" /> et Next.js
-          </p>
+        {/* Bottom Bar */}
+        <div className="pt-12 border-t border-border/50">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div className="space-y-3">
+              <p className="text-sm text-foreground/90 font-black tracking-tight">
+                © {currentYear} Benjamin KALOMBO MUKENA
+              </p>
+              <p className="text-xs text-muted-foreground max-w-sm leading-relaxed font-medium">
+                Conçu avec passion pour les systèmes bancaires critiques et l&apos;excellence technique.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center md:items-end gap-4">
+              <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground bg-secondary/60 px-5 py-2.5 rounded-full border border-border/50 shadow-sm">
+                <Code2 className="h-4 w-4 text-primary" />
+                <span>BUILD WITH</span>
+                <motion.span
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <Heart className="h-4 w-4 text-primary fill-primary" />
+                </motion.span>
+                <span>&</span>
+                <span className="text-foreground">NEXT.JS</span>
+              </div>
+              <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/40 italic">
+                <Sparkles className="h-3 w-3" />
+                Mission-critical Banking Solutions
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
