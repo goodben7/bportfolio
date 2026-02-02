@@ -6,7 +6,7 @@ import {
   Linkedin,
   Mail,
   Heart,
-  Twitter,
+  X,
   ExternalLink,
   ArrowUp,
   Cpu,
@@ -43,7 +43,7 @@ export function Footer() {
               </h3>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold text-primary uppercase tracking-widest">
                 <Cpu className="h-3 w-3" />
-                Ingénieur Logiciel Senior
+                Ingénieur Logiciel
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed max-w-sm mx-auto md:mx-0 font-medium">
@@ -51,9 +51,9 @@ export function Footer() {
             </p>
             <div className="flex justify-center md:justify-start gap-4">
               {[
-                { icon: Linkedin, href: "https://linkedin.com/in/benjaminkalombo", label: "LinkedIn", color: "hover:text-[#0077b5]" },
-                { icon: Github, href: "https://github.com/benjaminkalombo", label: "GitHub", color: "hover:text-foreground" },
-                { icon: Twitter, href: "https://twitter.com/fenx", label: "Twitter", color: "hover:text-[#1da1f2]" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/benjamin-kalombo-mukena-54520715b/", label: "LinkedIn", color: "hover:text-[#0077b5]" },
+                { icon: Github, href: "https://github.com/goodben7", label: "GitHub", color: "hover:text-foreground" },
+                { icon: X, href: "https://x.com/BenjaminMukena", label: "X", color: "hover:text-foreground" },
                 { icon: Mail, href: "mailto:bmukena85@gmail.com", label: "Email", color: "hover:text-primary" }
               ].map((social) => (
                 <motion.a
@@ -110,7 +110,7 @@ export function Footer() {
             className="space-y-6 text-center md:text-left"
           >
             <div className="space-y-2">
-              <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">Collaborons</h4>
+              <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">Contactez-moi</h4>
               <p className="text-sm text-muted-foreground font-medium italic">Vous avez un projet en tête ? Parlons-en !</p>
             </div>
 
@@ -155,34 +155,10 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-border/50">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-            <div className="space-y-3">
-              <p className="text-sm text-foreground/90 font-black tracking-tight">
-                © {currentYear} Benjamin KALOMBO MUKENA
-              </p>
-              <p className="text-xs text-muted-foreground max-w-sm leading-relaxed font-medium">
-                Conçu avec passion pour les systèmes bancaires critiques et l&apos;excellence technique.
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center md:items-end gap-4">
-              <div className="flex items-center gap-2 text-xs font-bold text-muted-foreground bg-secondary/60 px-5 py-2.5 rounded-full border border-border/50 shadow-sm">
-                <Code2 className="h-4 w-4 text-primary" />
-                <span>BUILD WITH</span>
-                <motion.span
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <Heart className="h-4 w-4 text-primary fill-primary" />
-                </motion.span>
-                <span>&</span>
-                <span className="text-foreground">NEXT.JS</span>
-              </div>
-              <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground/40 italic">
-                <Sparkles className="h-3 w-3" />
-                Mission-critical Banking Solutions
-              </div>
-            </div>
+          <div className="flex justify-center items-center text-center">
+            <p className="text-sm text-foreground/90 font-black tracking-tight">
+              © {currentYear} Benjamin KALOMBO MUKENA
+            </p>
           </div>
         </div>
       </div>

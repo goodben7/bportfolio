@@ -107,16 +107,12 @@ export function Education() {
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Parcours & Académique
+              Parcours  Académique
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-center leading-relaxed mb-4">
             Un socle académique rigoureux en mathématiques et ingénierie informatique, formant une base solide pour la conception de solutions technologiques critiques.
           </p>
-          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-            <Sparkles className="h-4 w-4 text-accent" />
-            <span>Expertise : Mathématiques Appliquées & Génie Logiciel</span>
-          </div>
         </motion.div>
 
         {/* Education Cards Grid */}
@@ -205,48 +201,7 @@ export function Education() {
           ))}
         </div>
 
-        {/* Training & Certifications Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-4">
-            <Layers className="h-4 w-4 text-accent" />
-            <span className="text-xs font-bold uppercase tracking-widest text-accent">Développement Continu</span>
-          </div>
-          <h3 className="text-2xl md:text-3xl font-bold">Certifications & Formations Continues</h3>
-        </motion.div>
 
-        {/* Certifications Card (Preserved Design) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
-        >
-          <Card className="border-dashed border-2 border-border/50 bg-card/40 backdrop-blur-sm p-10 text-center group hover:border-primary/40 transition-all duration-300">
-            <div className="inline-flex items-center justify-center p-4 mb-6 rounded-full bg-primary/10 text-primary group-hover:scale-110 transition-transform">
-              <Award className="h-10 w-10 text-accent shadow-xl" />
-            </div>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg">
-              Engagement constant dans l&apos;apprentissage des nouvelles technologies et des meilleures pratiques de l&apos;industrie (Objectif 2026 : Certifications .NET & Cloud Architecture).
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              {[
-                { name: ".NET Advanced", icon: Briefcase },
-                { name: "Cloud Architecture", icon: Layout },
-                { name: "Cybersecurity", icon: GraduationCap }
-              ].map((cert) => (
-                <div key={cert.name} className="flex items-center gap-3 text-sm font-bold px-6 py-3 rounded-full bg-secondary/50 text-foreground border border-border/50 hover:border-accent/40 transition-all">
-                  <cert.icon className="h-4 w-4 text-accent" />
-                  <span>{cert.name}</span>
-                </div>
-              ))}
-            </div>
-          </Card>
-        </motion.div>
       </div>
     </section>
   );

@@ -66,7 +66,7 @@ export function Hero() {
               className="inline-block"
             >
               <Badge variant="outline" className="text-lg md:text-xl py-1.5 px-6 border-primary/30 text-primary font-bold tracking-widest uppercase bg-primary/5">
-                Ingénieur Logiciel Senior
+                Ingénieur Logiciel
               </Badge>
             </motion.div>
           </div>
@@ -95,7 +95,7 @@ export function Hero() {
               asChild
             >
               <a href="#contact">
-                Collaborons ensemble
+                Contactez-moi
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>
@@ -108,7 +108,7 @@ export function Hero() {
             >
               <a href="/cv.pdf" download>
                 <Download className="mr-2 h-5 w-5 transition-transform group-hover:translate-y-1" />
-                Dossier de compétences
+                Télécharger le CV
               </a>
             </Button>
           </motion.div>
@@ -146,8 +146,8 @@ export function Hero() {
             className="flex gap-6 pt-2"
           >
             {[
-              { icon: Github, href: "https://github.com/benjaminkalombo", label: "GitHub" },
-              { icon: Linkedin, href: "https://linkedin.com/in/benjaminkalombo", label: "LinkedIn" },
+              { icon: Github, href: "https://github.com/goodben7", label: "GitHub" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/benjamin-kalombo-mukena-54520715b/", label: "LinkedIn" },
               { icon: Mail, href: "mailto:bmukena85@gmail.com", label: "Email" }
             ].map((social) => (
               <a

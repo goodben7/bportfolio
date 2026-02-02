@@ -11,7 +11,7 @@ import {
   Send,
   Github,
   Linkedin,
-  Twitter,
+  X,
   CheckCircle2,
   MessageSquare,
   Sparkles,
@@ -99,7 +99,6 @@ export function Contact() {
                 <div>
                   <h3 className="text-2xl font-bold mb-2 flex items-center gap-2">
                     Informations de contact
-                    <Sparkles className="h-5 w-5 text-accent animate-pulse" />
                   </h3>
                   <p className="text-muted-foreground">
                     Basé à Kinshasa, je suis ouvert aux opportunités locales et internationales.
@@ -148,9 +147,9 @@ export function Contact() {
                   <h4 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4">Réseaux professionnels</h4>
                   <div className="flex gap-4">
                     {[
-                      { icon: Github, href: "https://github.com/benjaminkalombo", label: "GitHub", color: "hover:bg-foreground hover:text-background" },
-                      { icon: Linkedin, href: "https://linkedin.com/in/benjaminkalombo", label: "LinkedIn", color: "hover:bg-[#0077b5] hover:text-white" },
-                      { icon: Twitter, href: "https://twitter.com/fenx", label: "Twitter", color: "hover:bg-[#1da1f2] hover:text-white" }
+                      { icon: Github, href: "https://github.com/goodben7", label: "GitHub", color: "hover:bg-foreground hover:text-background" },
+                      { icon: Linkedin, href: "https://www.linkedin.com/in/benjamin-kalombo-mukena-54520715b/", label: "LinkedIn", color: "hover:bg-[#0077b5] hover:text-white" },
+                      { icon: X, href: "https://x.com/BenjaminMukena", label: "X", color: "hover:bg-foreground hover:text-background" }
                     ].map((social) => (
                       <Button
                         key={social.label}
@@ -303,23 +302,7 @@ export function Contact() {
         </div>
 
         {/* Bottom CTA for direct messaging */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
-        >
-          <div className="inline-flex items-center gap-3 p-1 pr-6 rounded-full bg-secondary/30 border border-border/50 hover:border-primary/40 transition-all group">
-            <div className="p-2 rounded-full bg-primary text-primary-foreground">
-              <Sparkles className="h-4 w-4" />
-            </div>
-            <p className="text-sm font-medium">
-              Disponible pour de nouveaux défis en <span className="text-primary">Fintech & Banking</span>
-            </p>
-            <ArrowRight className="h-4 w-4 ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

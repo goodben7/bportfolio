@@ -247,7 +247,7 @@ export function Projects() {
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 mb-6"
           >
-            <Sparkles className="h-4 w-4 text-primary" />
+            <Briefcase className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium">Portfolio Projets</span>
           </motion.div>
 

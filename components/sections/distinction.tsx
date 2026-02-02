@@ -10,11 +10,12 @@ import {
   Calendar,
   Users,
   Sparkles,
-  Star,
+
   Code2,
   Target,
   Layers,
   Zap,
+  Lightbulb,
   ArrowUpRight
 } from "lucide-react";
 
@@ -40,7 +41,7 @@ const distinctions = [
       {
         name: "Innovation",
         description: "Développement d’une solution SaaS primée pour la gouvernance publique.",
-        icon: Sparkles,
+        icon: Lightbulb,
         color: "text-accent"
       },
       {
@@ -161,22 +162,7 @@ export function Distinction() {
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 />
 
-                {/* Sparkle Effects */}
-                <div className="absolute top-4 right-4 z-20">
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      rotate: [0, 180, 360]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    <Sparkles className="h-6 w-6 text-accent" />
-                  </motion.div>
-                </div>
+
 
                 <div className="relative p-8 md:p-12">
                   <div className="flex flex-col lg:flex-row gap-10 items-start">
@@ -223,13 +209,7 @@ export function Distinction() {
                             <Trophy className="h-24 w-24 md:h-28 md:w-28 text-accent drop-shadow-2xl" />
                           </motion.div>
 
-                          {/* Stars decoration */}
-                          <div className="absolute -top-2 -right-2">
-                            <Star className="h-6 w-6 text-accent fill-accent animate-pulse" />
-                          </div>
-                          <div className="absolute -bottom-2 -left-2">
-                            <Star className="h-5 w-5 text-primary fill-primary animate-pulse delay-500" />
-                          </div>
+
                         </div>
                       </div>
                     </motion.div>
@@ -301,7 +281,7 @@ export function Distinction() {
                       {/* Impact Section */}
                       <div className="p-6 rounded-xl bg-gradient-to-r from-accent/10 to-primary/10 border border-accent/30">
                         <h4 className="text-base font-bold mb-4 flex items-center gap-2">
-                          <Star className="h-5 w-5 text-accent fill-accent" />
+                          <Zap className="h-5 w-5 text-accent" />
                           Impact & Reconnaissance
                         </h4>
                         <ul className="space-y-2">
