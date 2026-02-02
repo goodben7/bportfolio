@@ -20,6 +20,8 @@ Portfolio professionnel moderne et minimaliste pour Ingénieur Logiciel Backend 
 - ✅ 100% Responsive (Mobile, Tablet, Desktop)
 - ✅ Composants réutilisables et modulaires
 - ✅ SEO optimisé
+- ✅ Formulaire de contact fonctionnel (via Formspree)
+- ✅ SEO Technique complet (Sitemap, Robots.txt, Metadata, Open Graph)
 - ✅ Accessibilité (ARIA labels, navigation au clavier)
 - ✅ Performance optimale
 
@@ -36,41 +38,35 @@ npm run dev
 npm run build
 
 # Démarrer en production
-npm start
-```
 
 ## 🎨 Structure du Projet
-
-```
-portfolio/
-├── app/
-│   ├── layout.tsx          # Layout principal avec SEO
-│   ├── page.tsx            # Page d'accueil
+│   ├── robots.ts           # Configuration robots.txt
 │   └── globals.css         # Styles globaux et thème
 ├── components/
 │   ├── sections/
-│   │   ├── hero.tsx        # Section Hero
+│   │   ├── hero.tsx        # Section Hero (avec Photo de profil)
 │   │   ├── tech-stack.tsx  # Compétences techniques
 │   │   ├── experience.tsx  # Expérience professionnelle
 │   │   ├── projects.tsx    # Projets majeurs
 │   │   ├── distinction.tsx # Prix et distinctions
 │   │   ├── education.tsx   # Formation
-│   │   └── contact.tsx     # Contact
+│   │   └── contact.tsx     # Contact (Formspree intégré)
 │   ├── ui/                 # Composants UI Shadcn
 │   └── footer.tsx          # Footer
+├── public/                 # Assets statiques (CV, Favicon, Images)
 └── lib/
     └── utils.ts            # Utilitaires
 ```
 
 ## 🎯 Sections du Portfolio
 
-1. **Hero** - Introduction avec nom, titre et CTAs
+1. **Hero** - Introduction avec photo de profil, nom, titre et CTAs
 2. **Tech Stack** - Compétences techniques organisées par catégorie
 3. **Expérience** - FENX et TINDA
-4. **Projets** - BANKY (CBS) et KYC-MANAGER
+4. **Projets** - BANKY (CBS), AGP-PACT et KYC-MANAGER
 5. **Distinction** - 1er Prix Hackathon "Code & Win" ADIS 2025
-6. **Éducation** - UNIKIN
-7. **Contact** - Formulaire et informations de contact
+6. **Éducation** - UNIKIN (Formation académique)
+7. **Contact** - Formulaire fonctionnel relié à votre email
 
 ## 🎨 Personnalisation
 
@@ -110,13 +106,11 @@ Le portfolio est entièrement responsive avec des breakpoints:
 npm i -g vercel
 
 # Déployer
-vercel
-```
 
 ### Autres plateformes
 
 Le projet peut être déployé sur n'importe quelle plateforme supportant Next.js:
-- Netlify
+- Netlify (Utilisé actuellement)
 - Railway
 - Render
 - AWS Amplify
@@ -129,5 +123,6 @@ Le projet peut être déployé sur n'importe quelle plateforme supportant Next.j
 
 - **Email**: bmukena85@gmail.com
 - **Téléphone**: +243 828 120 996
-- **GitHub**: [github.com/benjaminkalombo](https://github.com/benjaminkalombo)
-- **LinkedIn**: [linkedin.com/in/benjaminkalombo](https://linkedin.com/in/benjaminkalombo)
+- **GitHub**: [github.com/goodben7](https://github.com/goodben7)
+- **LinkedIn**: [linkedin.com/in/benjamin-kalombo-mukena](https://www.linkedin.com/in/benjamin-kalombo-mukena-54520715b/)
+- **X (Twitter)**: [@BenjaminMukena](https://x.com/BenjaminMukena)
