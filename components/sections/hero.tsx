@@ -19,28 +19,22 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center space-y-10 max-w-5xl mx-auto"
         >
-          {/* Status & Awards Badges */}
-          <div className="flex flex-wrap justify-center items-center gap-3">
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-md"
-            >
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-widest text-primary">Disponible pour opportunités</span>
-            </motion.div>
-
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 backdrop-blur-md"
-            >
-              <Trophy className="h-3.5 w-3.5 text-accent" />
-              <span className="text-xs font-bold uppercase tracking-widest text-accent">Lauréat 1er Prix Hackathon Code & Win 2025</span>
-            </motion.div>
-          </div>
+          {/* Profile Picture */}
+          <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-background shadow-2xl overflow-hidden mb-6 group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 group-hover:opacity-0 transition-opacity duration-500 z-10" />
+            <img
+              src="/me.jpeg"
+              alt="Benjamin KALOMBO MUKENA"
+              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+            />
+            {/* Ring Glow */}
+            <div className="absolute inset-0 rounded-full border-2 border-primary/30 ring-4 ring-primary/10" />
+          </motion.div>
 
           {/* Main Title Group */}
           <div className="space-y-4">
