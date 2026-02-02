@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://benjaminkalombo.dev",
+    url: "https://benjaminkalombo.netlify.app",
     title: "Benjamin KALOMBO MUKENA | Ingénieur Logiciel Backend",
     description: "Expert en intégration d'API et systèmes bancaires distribués",
     siteName: "Benjamin KALOMBO MUKENA Portfolio",
