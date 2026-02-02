@@ -38,8 +38,17 @@ npm run dev
 npm run build
 
 # Démarrer en production
+npm start
+```
 
 ## 🎨 Structure du Projet
+
+```
+portfolio/
+├── app/
+│   ├── layout.tsx          # Layout principal avec SEO & Metadata
+│   ├── page.tsx            # Page d'accueil
+│   ├── sitemap.ts          # Génération dynamique du sitemap.xml
 │   ├── robots.ts           # Configuration robots.txt
 │   └── globals.css         # Styles globaux et thème
 ├── components/
@@ -106,10 +115,13 @@ Le portfolio est entièrement responsive avec des breakpoints:
 npm i -g vercel
 
 # Déployer
+vercel
+```
 
 ### Autres plateformes
 
 Le projet peut être déployé sur n'importe quelle plateforme supportant Next.js:
+
 - Netlify (Utilisé actuellement)
 - Railway
 - Render
@@ -121,7 +133,7 @@ Le projet peut être déployé sur n'importe quelle plateforme supportant Next.j
 
 ## 📧 Contact
 
-- **Email**: bmukena85@gmail.com
+- **Email**: <bmukena85@gmail.com>
 - **Téléphone**: +243 828 120 996
 - **GitHub**: [github.com/goodben7](https://github.com/goodben7)
 - **LinkedIn**: [linkedin.com/in/benjamin-kalombo-mukena](https://www.linkedin.com/in/benjamin-kalombo-mukena-54520715b/)
