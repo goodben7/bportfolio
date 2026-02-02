@@ -27,21 +27,43 @@ export function Contact() {
     message: "",
   });
 
+  const [error, setError] = useState<string | null>(null);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      const response = await fetch("https://formspree.io/f/xeezkwja", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    // Reset form after 5 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: "", email: "", message: "" });
-    }, 5000);
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: "", email: "", message: "" });
+        // Reset success message after 5 seconds to allow new submission if needed
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          setError(data.errors.map((error: any) => error.message).join(", "));
+        } else {
+          setError("Une erreur est survenue lors de l'envoi du message.");
+        }
+      }
+    } catch (error) {
+      setError("Impossible d'envoyer le message. Vérifiez votre connexion.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -193,6 +215,11 @@ export function Contact() {
                     <div className="space-y-2">
                       <h3 className="text-2xl font-bold">Envoyez un message</h3>
                       <p className="text-muted-foreground">Remplissez le formulaire ci-dessous et je vous répondrai dans les plus brefs délais.</p>
+                      {error && (
+                        <p className="text-sm text-red-500 font-medium bg-red-500/10 p-3 rounded-lg border border-red-500/20">
+                          {error}
+                        </p>
+                      )}
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-5">
@@ -245,9 +272,6 @@ export function Contact() {
                           placeholder="Parlez-moi de votre projet, de vos objectifs..."
                         />
                       </div>
-
-                      {/* Honeypot for simple spam protection */}
-                      <input type="checkbox" name="bot_check" className="hidden" tabIndex={-1} autoComplete="off" />
 
                       <Button
                         disabled={isSubmitting}
